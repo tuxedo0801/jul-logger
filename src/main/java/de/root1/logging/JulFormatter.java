@@ -109,6 +109,6 @@ public class JulFormatter extends Formatter {
         for (Handler handler : handlers) {
             handler.setFormatter(formatter);
         }
-        logger.log(Level.INFO, "Set formatter to: {0}", JulFormatter.class.getCanonicalName());
+        logger.log(Level.INFO, "Set formatter to "+JulFormatter.class.getCanonicalName());
     }
 }
