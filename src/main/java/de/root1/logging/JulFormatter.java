@@ -33,7 +33,7 @@ import java.util.logging.Logger;
  *
  * @version 20150804 1504
  */
-public class JulLogFormatter extends Formatter {
+public class JulFormatter extends Formatter {
 
     private static final SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss.SSS");
     private static final String CRLF = "\r\n";
@@ -103,12 +103,12 @@ public class JulLogFormatter extends Formatter {
     }
     
     public static void set() {
-        JulLogFormatter formatter = new JulLogFormatter();
+        JulFormatter formatter = new JulFormatter();
         Logger logger = java.util.logging.Logger.getLogger("");
         Handler[] handlers = logger.getHandlers();
         for (Handler handler : handlers) {
             handler.setFormatter(formatter);
         }
-        logger.log(Level.INFO, "Set formatter to: {0}", JulLogFormatter.class.getCanonicalName());
+        logger.log(Level.INFO, "Set formatter to: {0}", JulFormatter.class.getCanonicalName());
     }
 }
