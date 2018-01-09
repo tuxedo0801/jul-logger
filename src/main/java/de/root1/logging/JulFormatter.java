@@ -53,7 +53,7 @@ public class JulFormatter extends Formatter {
         StringBuilder sb = new StringBuilder();
         // Send all output to the Appendable object sb
         java.util.Formatter formatter = new java.util.Formatter(sb, Locale.getDefault());
-        formatter.format(" %s ", record.getLevel().getName());
+        formatter.format(" %s ", record.getLevel().getName().substring(0, record.getLevel().getName().length()<4?record.getLevel().getName().length():4));
         output.append(sb);
 
 //        output.append("] ");
